@@ -1,21 +1,52 @@
 .navbar {
-  position: sticky;
-  top: 0;
-  width: 90%;
+  position: fixed;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: aqua;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
-  margin: 1rem auto;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .banner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.banner-header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: var(--black-olive);
+  font-family: 'Yeseva One', cursive;
+  line-height: 0.8;
+  font-size: 14vw;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -50%);
+}
+
+
+.banner-header-shadow {
+  font-size: 14.2vw;
+  z-index: 1;
+  color: var(--light-red);
+  position: absolute;
+  top: 49.5%;
+  left: 0.25%;
+  transform: translate(0%, -50%);
+}
+
+.sub-header-list li {
+  font-size: 2vw;
+  font-family: 'Noto Sans JP', sans-serif;
+  display: inline;
 }

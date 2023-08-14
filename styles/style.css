@@ -1,13 +1,3 @@
 @import "reset.css";
 @import "./components/navbar.css";
-
-:root {
-  --black-olive: #423e3bff;
-  --light-blue: rgb(192, 238, 250);
-  --light-red: #ff6b6bff;
-  --jasmine: #ffd275ff;
-}
-
-body {
-  background-color: var(--light-blue);
-}
+@import "./components/banner.css";

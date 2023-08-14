@@ -1,0 +1,28 @@
+  <!-- <div class="bottom-layer">
+  </div>
+  <div class="top-layer">
+  </div> -->
+  <div class="navbar">
+    <p class="logo">Elevate</p>
+    <div>
+      <button>Contact</button>
+    </div>
+  </div>
+  <div class="banner">
+    <div class="banner-header">
+      <h1>Elevate <br>Your <br> Business</h1>
+      <!-- <h1 class="banner-header-shadow">Elevate <br>Your <br> Business</h1> -->
+    </div>
+    <div class="banner-sub-header">
+      <div class="sub-header-text">
+        <ul class="sub-header-list">
+          <li>Personalised & Collaborative Approach</li>
+          <li>Sustainable Digital Solutions</li>
+          <li>Desgin backed by Expertise & Results</li>
+        </ul>
+        <div class="banner-actions">
+          <button>Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>

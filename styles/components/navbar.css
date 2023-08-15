@@ -39,7 +39,6 @@
 }
 
 .nav-links li:hover {
-  color: #004bee;
   text-decoration: underline;
   transform: scale(1.1);
   cursor: pointer;

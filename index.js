@@ -1,11 +1,15 @@
+// document.addEventListener('DOMContentLoaded', function () {
+//   const path = document.querySelector('.path');
+//   const pathLength = path.getTotalLength();
 
-addEventListener("DOMContentLoaded", () => {
-  const topLayer = document.querySelector('.top-layer');
-  const bottomLayer = document.querySelector('.bottom-layer');
-  console.log('DOM fully loaded and parsed');
-  if (topLayer) {
-    console.log('topLayer exists');
-    topLayer.classList.add('move-up');
-    bottomLayer.classList.add('move-down');
-  }
-});
+//   path.style.strokeDasharray = pathLength;
+//   path.style.strokeDashoffset = pathLength;
+
+//   function animatePath() {
+//     path.style.transition = 'stroke-dashoffset 5s linear';
+//     path.style.strokeDashoffset = '0';
+//     console.log('animatePath');
+//   }
+
+//   animatePath();
+// });

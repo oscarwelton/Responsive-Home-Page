@@ -30,3 +30,14 @@
   font-weight: 400;
   cursor: pointer;
 }
+
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.service {
+  width: 20vh;
+}

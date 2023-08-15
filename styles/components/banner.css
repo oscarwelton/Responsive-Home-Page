@@ -1,10 +1,20 @@
 .banner {
-  position: relative;
   height: 100vh;
 }
 
 .header {
   text-align: center;
+  line-height: 1.25;
+  font-size: 10vw;
+  font-family: 'Unbounded', sans-serif;
+}
+
+.header-shadow {
+  position: absolute;
+  color: aquamarine;
+  opacity: 0.4;
+  text-align: center;
+  line-height: 1.25;
   font-size: 10vw;
   font-family: 'Unbounded', sans-serif;
 }
@@ -25,7 +35,7 @@
 .banner-button {
   font-family: 'Montserrat', sans-serif;
   border: none;
-  background-color: #fff;
+  background-color: transparent;
   font-size: 1.5rem;
   font-weight: 400;
   cursor: pointer;
@@ -33,6 +43,7 @@
 
 
 .services {
+  height: 900px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

@@ -14,62 +14,86 @@
 <script src="./index.js"></script>
 
 <body>
-  <div class="navbar">
-    <div class="logo">
-      <img class="logo-img" src="./images/logo.png" alt="logo">
-    </div>
-    <div class="nav-links">
-      <ul>
-        <li>About</li>
-        <li>Services</li>
-        <li>Contact</li>
-      </ul>
-    </div>
-  </div>
+  <svg viewBox="0 0 100 220">
+    <defs>
+      <mask id="mask">
+        <path class="path" fill="none" stroke="white" d="M0,70 S50,120 40,70 S70,100 100,0"></path>
+      </mask>
+      <mask id="mask-1">
+        <path class="path" fill="none" stroke="white" d="M1,178 S-5,79 174,190 S97,92 0,116"></path>
+      </mask>
+      <mask id="mask-2">
+        <path class="path-3" fill="none" stroke="white" d="M0,30 Q70,10 70,60 T100,60"></path>
+      </mask>
+      <mask id="mask-5">
+        <path class="path-3" fill="none" stroke="white" d="M76,0 Q167,59 14,137 T95,224"></path>
+      </mask>
+      <mask id="mask-3">
+        <path class="path-2" fill="none" stroke="white" d="M20,0 S10,20 40,10 S30,80 0,30"></path>
+      </mask>
+      <mask id="mask-4">
+        <path class="path-2" fill="none" stroke="white" d="M99,115 S27,67 64,130 S-1,94 -28,75"></path>
+      </mask>
+    </defs>
 
-  <div class="background">
-    <svg viewBox="0 0 100 100">
-      <defs>
-        <mask id="mask">
-          <path class="path" fill="none" stroke="white" d="M0,50C0,50,8.5,10,36,5S82,12,92,30S88,67,100,58S75,64,66,80S65,100,100,100H0Z" />
-        </mask>
-      </defs>
-      <image href="./images/background.jpg" mask="url(#mask)" />
-    </svg>
-  </div>
-  <div class="banner">
-    <!-- <div class="banner-text">
-      <h1 class="header">Website <br>Design & <br>Development</h1>
-      <div class="banner-buttons">
-        <button class="banner-button">Get Started</button>
-        <button class="banner-button">Learn More</button>
+    <image class="bg-image" href="./images/background-2.jpg" mask="url(#mask)" />
+    <image class="bg-image" href="./images/background-2.jpg" mask="url(#mask-1)" />
+    <image class="bg-image" href="./images/background-3.jpg" mask="url(#mask-2)" />
+    <image class="bg-image" href="./images/background.jpg" mask="url(#mask-3)" />
+    <image class="bg-image" href="./images/background.jpg" mask="url(#mask-4)" />
+    <image class="bg-image" href="./images/background-3.jpg" mask="url(#mask-5)" />
+  </svg>
+
+  <!-- <main>
+    <div class="navbar">
+      <div class="logo">
+        <img class="logo-img" src="./images/logo.png" alt="logo">
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li>About</li>
+          <li>Services</li>
+          <li>Contact</li>
+        </ul>
       </div>
     </div>
-    <div class="banner-images">
 
+
+    <div class="banner">
+      <div class="banner-text">
+        <h1 class="header">Website <br>Design & <br>Development</h1>
+        <div class="banner-buttons">
+          <button class="banner-button">Learn More</button>
+        </div>
+      </div>
+      <div class="banner-images">
+
+      </div>
+    </div>
+
+
+
+ -->
+
+
+    <!-- <div class="services">
+      <div class="service">
+        <h2>Design</h2>
+
+
+      </div>
+      <div class="service">
+        <h2>Development</h2>
+
+      </div>
+      <div class="service">
+        <h2>Branding</h2>
+
+      </div>
     </div> -->
-  </div>
 
+  <!-- </main> -->
 
-
-
-
-
-  <div class="services">
-    <div class="service">
-      <h2>Design</h2>
-
-
-    </div>
-    <div class="service">
-      <h2>Development</h2>
-
-    </div>
-    <div class="service">
-      <h2>Branding</h2>
-
-    </div>
-  </div>
 </body>
 
 </html>

@@ -1,16 +1,46 @@
-.background {
-  overflow: hidden;
-  height: 100vh;
+.bg-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+svg {
   width: 100vw;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
 }
 
 .path {
-  stroke-width: 0.5vw;
+  stroke-width: 5px;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: dash 10s linear alternate infinite;
+  animation-delay: 2s;
+  animation: dash 20s ease-in forwards;
+}
+
+.path-2 {
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation-delay: 10s;
+  animation: dash 20s ease-in forwards;
+}
+
+.path-3 {
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation-delay: 15s;
+  animation: dash 20s ease-in forwards;
+}
+
+textPath {
+  alignment-baseline: middle;
+
 }
 
 @keyframes dash {

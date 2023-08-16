@@ -27,46 +27,43 @@
     </div>
   </div>
 
-  <svg viewBox="0 0 100 175">
-    <defs>
-
-      <mask id="mask">
-        <path id="layer-1" class="path" fill="none" stroke="white" d="M0,70 S50,120 40,70 S70,100 100,0"></path>
-      </mask>
-      <mask id="mask-1">
-        <path id="layer-2" class="path" fill="none" stroke="white" d="M1,178 S-5,79 174,190 S97,92 0,116"></path>
-      </mask>
-
-      <mask id="mask-2">
-        <path id="layer-3" class="path-3" fill="none" stroke="white" d="M-34,220 S-17,108 174,190 S97,92 0,124"></path>
-      </mask>
-      <mask id="mask-5">
-        <path id="layer-4" class="path-3" fill="none" stroke="white" d="M76,0 Q167,59 14,137 T95,224"></path>
-      </mask>
-
-
-      <mask id="mask-3">
-        <path id="layer-5" class="path-2" fill="none" stroke="white" d="M20,0 S10,20 40,10 S30,80 0,30"></path>
-      </mask>
-      <mask id="mask-4">
-        <path id="layer-6" class="path-2" fill="none" stroke="white" d="M115,55 S25,66 90,167 S-1,96 -27,70"></path>
-      </mask>
-
+  <svg class="paint" viewBox="0 0 100 200">
+    <mask id="mask">
+      <path id="layer-1" class="path" fill="none" stroke="white" d="M0,70 S50,120 40,70 S70,100 100,0"></path>
+    </mask>
+    <mask id="mask-1">
+      <path id="layer-2" class="path" fill="none" stroke="white" d="M101,137 S26,40 74,136 S-87,109 100,162"></path>
+    </mask>
+    <mask id="mask-2">
+      <path id="layer-3" class="path-3" fill="none" stroke="white" d="M-3,58 S39,59 20,125 S86,55 -4,131"></path>
+    </mask>
+    <mask id="mask-5">
+      <path id="layer-4" class="path-3" fill="none" stroke="white" d="M0,17 Q56,52 60,74 T100,75"></path>
+    </mask>
+    <mask id="mask-7">
+      <path id="layer-7" class="path" fill="none" stroke="white" d="M101,137 S8,8 10,76 S-36,193 100,191"></path>
+    </mask>
+    <mask id="mask-3">
+      <path id="layer-5" class="path-2" fill="none" stroke="white" d="M20,0 S10,20 40,10 S30,80 0,30"></path>
+    </mask>
+    <mask id="mask-4">
+      <path id="layer-6" class="path-2" fill="none" stroke="white" d="M85,-6 S30,47 86,89 S0,85 -5,101"></path>
+    </mask>
     </defs>
 
-    <image class="bg-image layer-one" href="./images/background-2.jpg" mask="url(#mask)" />
-    <image class="bg-image layer-one" href="./images/background-2.jpg" mask="url(#mask-1)" />
+    <image class="bg-image" href="./images/background-2.jpg" mask="url(#mask)" />
+    <image class="bg-image" href="./images/background-2.jpg" mask="url(#mask-1)" />
     <image class="bg-image" href="./images/background.jpg" mask="url(#mask-3)" />
     <image class="bg-image" href="./images/background.jpg" mask="url(#mask-4)" />
     <image class="bg-image" href="./images/background-3.jpg" mask="url(#mask-2)" />
     <image class="bg-image" href="./images/background-3.jpg" mask="url(#mask-5)" />
+    <image class="bg-image" href="./images/background-4.jpg" mask="url(#mask-7)" />
   </svg>
 
 
   <div class="banner">
     <div class="header-div">
-      <h1 class="header-shadow">Website <br>Design & <br>Development</h1>
-      <h1 class="header">Website <br>Design & <br>Development</h1>
+      <h1 class="header">Creative <br>Digital<br>Solutions</h1>
     </div>
   </div>
 
@@ -80,23 +77,33 @@
   </div> -->
 
 
-  <div class="services">
-      <div class="service">
-        <h2>Design</h2>
+  <div class="images">
+    <div class="test"></div>
+    <div class="test"></div>
+    <div class="test"></div>
+    <div class="test"></div>
+    <div class="test"></div>
+  </div>
 
-
-      </div>
-      <div class="service">
-        <h2>Development</h2>
-
-      </div>
-      <div class="service">
-        <h2>Branding</h2>
-
-      </div>
+  <div class="flex">
+    <div class="services-list">
+      <button id="front">front</button>
+      <button id="top">top</button>
+      <button id="bottom">bottom</button>
+      <button id="back">back</button>
     </div>
 
-  <!-- </main> -->
+    <div class="scene">
+      <div class="box">
+        <div class="face front">front</div>
+        <div class="face back">back</div>
+        <div class="face top">top</div>
+        <div class="face bottom">bottom</div>
+        <div class="face left">left</div>
+        <div class="face right">right</div>
+      </div>
+    </div>
+  </div>
 
 </body>
 

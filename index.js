@@ -5,29 +5,97 @@ document.addEventListener("DOMContentLoaded", function () {
   const layerFour = document.getElementById("layer-4");
   const layerFive = document.getElementById("layer-5");
   const layerSix = document.getElementById("layer-6");
+  const layerSeven = document.getElementById("layer-7");
 
-  const banner = document.querySelector(".banner");
+  const header = document.querySelector(".header");
+  // const banner = document.querySelector(".banner");
+  const initialFontSize = parseFloat(getComputedStyle(header).fontSize);
 
   const updateBanner = () => {
     const scroll = window.pageYOffset;
-    banner.style.transform = `rotate3d(2, 3, 1, -${scroll * 0.05}deg) translate(-${scroll * 0.05}px, -${scroll * 0.05}px)`;
+    const newSize = Math.max(initialFontSize, initialFontSize + scroll);
+
+    header.style.fontSize = `${newSize}px`;
+    header.style.opacity = 1 - scroll / 300;
+
+    if (header.style.opacity < 0) {
+      header.style.opacity = 0;
+    }
   };
+
+  const box = document.querySelector(".box");
+  const back = document.getElementById("back");
+  const front = document.getElementById("front");
+  const top = document.getElementById("top");
+  const bottom = document.getElementById("bottom");
+
+  bottom.addEventListener("click", () => {
+    box.classList.add("rotate-bottom");
+    box.classList.remove("rotate-top");
+    box.classList.remove("rotate-back");
+  });
+
+  top.addEventListener("click", () => {
+    box.classList.add("rotate-top");
+    box.classList.remove("rotate-bottom");
+    box.classList.remove("rotate-back");
+  });
+
+  back.addEventListener("click", () => {
+    box.classList.remove("rotate-top");
+    box.classList.remove("rotate-bottom");
+    box.classList.add("rotate-back");
+  });
+
+  front.addEventListener("click", () => {
+    box.classList.remove("rotate-top");
+    box.classList.remove("rotate-back");
+    box.classList.remove("rotate-bottom");
+  });
+
+
 
   const updateParallax = () => {
     const scroll = window.pageYOffset;
-    const scroll2 = window.pageYOffset;
-    const scroll3 = window.pageYOffset;
 
-    layerOne.setAttribute("transform", `translate(${-(scroll * 0.1).toFixed(0)}, 0)`);
-    layerTwo.setAttribute("transform", `translate(${(scroll2 * 0.2).toFixed(0)}, 0)`);
-    layerThree.setAttribute("transform", `translate(-${(scroll3 * 0.3).toFixed(0)} ,0)`);
-    layerFour.setAttribute("transform", `translate(${-(scroll * 0.4).toFixed(0)}, 0)`);
-    layerFive.setAttribute("transform", `translate(${-(scroll2 * 0.5).toFixed(0)}, 0)`);
-    layerSix.setAttribute("transform", `translate(${-(scroll3 * 0.6).toFixed(0)}, 0)`);
+    layerOne.setAttribute(
+      "transform",
+      `translate(${-(scroll * 0.1).toFixed(0)}, ${-(scroll * 0.1).toFixed(0)})`
+    );
+    layerTwo.setAttribute(
+      "transform",
+      `translate(${(scroll * 0.2).toFixed(0)}, 0)`
+    );
+    layerThree.setAttribute(
+      "transform",
+      `translate(-${(scroll * 0.3).toFixed(0)} ,0)`
+    );
+    layerFour.setAttribute(
+      "transform",
+      `translate(0, ${-(scroll * 0.4).toFixed(0)})`
+    );
+    layerFive.setAttribute(
+      "transform",
+      `translate(${-(scroll * 0.5).toFixed(0)}, 0)`
+    );
+    layerSix.setAttribute(
+      "transform",
+      `translate(${-(scroll * 0.6).toFixed(0)}, 0), rotate(-${(
+        scroll * 0.2
+      ).toFixed(0)})`
+    );
+    layerSeven.setAttribute(
+      "transform",
+      `translate(${(scroll * 0.7).toFixed(0)}, ${(scroll * 0.3).toFixed(
+        0
+      )}), rotate(-${(scroll * 0.1).toFixed(0)})`
+    );
   };
 
-  // window.addEventListener("scroll", updateBanner);
+  window.addEventListener("scroll", updateBanner);
   window.addEventListener("scroll", updateParallax);
   window.addEventListener("resize", updateParallax);
   updateParallax();
+
+
 });

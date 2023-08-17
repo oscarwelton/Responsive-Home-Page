@@ -10,9 +10,8 @@
 
 .header {
   position: absolute;
-  top: 100%;
+  bottom: 0%;
   left: 0%;
-  transform: translate(0%, -100%);
   white-space: nowrap;
   text-align: left;
   letter-spacing: 2px;
@@ -63,12 +62,4 @@
   top: 30%;
   left: 40%;
   text-align: right;
-}
-
-.box-container {
-  height: 500px;
-  width: 500px;
-  margin: auto;
-  position: relative;
-  background-color: antiquewhite;
 }

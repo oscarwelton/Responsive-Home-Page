@@ -8,52 +8,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const layerSeven = document.getElementById("layer-7");
 
   const header = document.querySelector(".header");
-  // const banner = document.querySelector(".banner");
+  const banner = document.querySelector(".banner");
   const initialFontSize = parseFloat(getComputedStyle(header).fontSize);
+  const initialHeight = banner.offsetHeight
 
   const updateBanner = () => {
     const scroll = window.pageYOffset;
     const newSize = Math.max(initialFontSize, initialFontSize + scroll);
 
+
+    banner.style.height = (initialHeight - scroll) + 'px'
+
     header.style.fontSize = `${newSize}px`;
     header.style.opacity = 1 - scroll / 300;
+    header.style.transform = `translateY(-${scroll / 3}px)`;
 
     if (header.style.opacity < 0) {
       header.style.opacity = 0;
     }
   };
-
-  const box = document.querySelector(".box");
-  const back = document.getElementById("back");
-  const front = document.getElementById("front");
-  const top = document.getElementById("top");
-  const bottom = document.getElementById("bottom");
-
-  bottom.addEventListener("click", () => {
-    box.classList.add("rotate-bottom");
-    box.classList.remove("rotate-top");
-    box.classList.remove("rotate-back");
-  });
-
-  top.addEventListener("click", () => {
-    box.classList.add("rotate-top");
-    box.classList.remove("rotate-bottom");
-    box.classList.remove("rotate-back");
-  });
-
-  back.addEventListener("click", () => {
-    box.classList.remove("rotate-top");
-    box.classList.remove("rotate-bottom");
-    box.classList.add("rotate-back");
-  });
-
-  front.addEventListener("click", () => {
-    box.classList.remove("rotate-top");
-    box.classList.remove("rotate-back");
-    box.classList.remove("rotate-bottom");
-  });
-
-
 
   const updateParallax = () => {
     const scroll = window.pageYOffset;
@@ -97,5 +70,44 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", updateParallax);
   updateParallax();
 
+  const ellipses = document.querySelectorAll('.elipse-1');
 
+  window.addEventListener('scroll', () => {
+    const scrollValue = window.scrollY;
+    const boxShadowValue = `inset ${-(scrollValue / 40).toFixed(0)}px ${-(scrollValue / 50).toFixed(0)}px 15px 5px black`;
+
+    ellipses.forEach(elipse => {
+      elipse.style.setProperty('box-shadow', boxShadowValue);
+    });
+  });
+
+
+  const designButton = document.getElementById("design");
+  const developmentButton = document.getElementById("development");
+  const brandingButton = document.getElementById("branding");
+  const design = document.querySelector(".design")
+  const development = document.querySelector(".development")
+  const branding = document.querySelector(".branding");
+  const face = document.querySelector(".face");
+
+  designButton.addEventListener('click', () => {
+    design.classList.add("reveal");
+    face.classList.add("hide")
+    development.classList.remove("reveal");
+    branding.classList.remove("reveal")
+  })
+
+  developmentButton.addEventListener("click", () => {
+    face.classList.add("hide")
+    development.classList.add("reveal");
+    design.classList.remove("reveal");
+    branding.classList.remove("reveal")
+  })
+
+  brandingButton.addEventListener("click", () => {
+    face.classList.add("hide")
+    branding.classList.add("reveal");
+    development.classList.remove("reveal");
+    design.classList.remove("reveal")
+  })
 });

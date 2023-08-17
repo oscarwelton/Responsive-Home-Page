@@ -1,86 +1,82 @@
-.flex {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: fit-content;
-}
-
 .services-list button {
-  font-size: 2vw;
+  font-size: 6vw;
   background-color: transparent;
   border: none;
-  font-family: 'Unbounded', sans-serif;
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+  text-align: right;
+  font-weight: 700;
+  color: white;
+  margin: 1rem 0rem;
 }
 
+button:hover {
+  cursor: pointer;
+}
 
+button:active {
+  color: red;
+}
 
+.list-button:hover {
+  color: aqua;
+}
+
+.service-div {
+  position: relative;
+  border-radius: 2rem;
+}
+
+#front {
+  position: absolute;
+  font-weight: 100;
+  font-size: 4vw;
+  font-family: "Montserrat", sans-serif;
+  background-color: transparent;
+  border: none;
+}
+
+.front-button {
+  display: flex;
+  align-items: center;
+}
 
 .services-list {
+  background-color: rgb(0, 0, 0);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  transform-origin: 0 0;
-  transform: rotate(-90deg) translate(-100%);
+  justify-content: space-between;
+  box-shadow:  1px 0px 20px 0px #0000006c;
+  border: 1rem solid white;
 }
 
-.scene {
-  width: 800px;
-  height: 800px;
-}
-
-.box {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transform: rotateX(355deg) rotateY(355deg);
-  transition: transform 1s;
-  backface-visibility: hidden;
+.flex {
+  width: 90%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  box-shadow:  1px 0px 20px 0px #00000047;
+  box-sizing: border-box;
   overflow: hidden;
   background-color: white;
   color: black;
   padding: 1rem;
-  border: 1px solid black;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  transition: all 0.3s ease-in-out;
 }
 
-.front {
-
-}
-
-.back {
-  transform: translateZ(-800px) rotateY(180deg) rotateZ(180deg);
-}
-
-.top {
-  transform: translateY(-400px) translateZ(-400px) rotateX(90deg);
-}
-
-.left {
-  transform: translateX(-400px) translateZ(-400px) rotateY(-90deg);
-}
-
-.right {
-  transform: translateX(400px) translateZ(-400px) rotateY(90deg);
-}
-
-.bottom {
-  transform: translateY(400px) translateZ(-400px) rotateX(-90deg);
-}
-
-.rotate-top {
-  transform: rotateX(-95deg) rotateZ(-5deg) translateZ(400px);
-}
-
-.rotate-bottom {
-  transform: rotateX(90deg) translateZ(400px);
-}
-
-
-.rotate-back {
-  transform: rotateY(-180deg);
+.box-header {
+  font-size: 3vw;
+  font-family: 'Unbounded', sans-serif;
 }

@@ -9,7 +9,7 @@
   position: absolute;
   z-index: -1;
   width: 100vw;
-  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(24px -1px 4px rgba(0, 0, 0, 0.5));
 }
 
 .path {

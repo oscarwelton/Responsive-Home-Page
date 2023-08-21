@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>Web Design</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="./styles/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="./styles/style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico" />
 <link
   href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@100;400;800&family=Unbounded:wght@200;300;400;500;600;700;800&display=swap"
-  rel="stylesheet">
+  rel="stylesheet" />
 <script src="./index.js"></script>
 
 <body>
   <div class="navbar">
     <div class="logo">
-      <img class="logo-img" src="./images/logo.png" alt="logo">
-    </div>
-    <div class="nav-links">
-      <ul>
-        <li>About</li>
-        <li>Services</li>
-        <li>Contact</li>
-      </ul>
+      <img class="logo-img" src="./images/logo.png" alt="logo" />
     </div>
   </div>
 
@@ -60,52 +53,116 @@
     <image class="bg-image" href="./images/background-4.jpg" mask="url(#mask-7)" />
   </svg>
 
-
   <div class="banner">
     <div class="header-div">
-      <h1 class="header">Creative <br>Digital<br>Solutions</h1>
+      <h1 class="header">Creative. <br />Digital.<br />Solutions.</h1>
     </div>
   </div>
 
   <div class="title">
-    <h2>We are a creative agency, specialised in website design and development.</h2>
+    <h2>We help you stand out online.</h2>
   </div>
 
+  <div class="services">
+    <div class="newone">
+      <svg class="me" viewBox="0 0 50 300">
+        <defs>
+          <clipPath id="clipCircle">
+            <circle id="outer-left" cx="25" cy="75" r="25" />
+            <circle id="middle-left" cx="25" cy="150" r="25" />
+            <circle id="inner-left" cx="25" cy="225" r="25" />
+            <circle id="inner-right" cx="25" cy="300" r="25" />
+            <circle id="middle-right" cx="25" cy="400" r="25" />
+          </clipPath>
+        </defs>
+        <image class="circles-image" href="./images/background.jpg" clip-path="url(#clipCircle)" />
+      </svg>
+    </div>
+    <div class="service">
+        <h3 class="service-header">Design</h3>
+        <p class="service-text">
+          Whether you're in the process of introducing a new website or refining
+          your current site, our web design solutions will guarantee effective
+          communication between your business and its intended audience.
+        </p>
+        <button>Learn More</button>
+      </div>
 
-  <h2>Our Services</h2>
-  <div class="service">
-    <h3 class="service-header">Design</h3>
-    <p class="service-text">Whether you're in the process of introducing a new website or refining your current
-      site, our web design
-      solutions will guarantee effective communication between your business and its intended audience.</p>
+      <div class="service">
+        <h3 class="service-header">Development</h3>
+        <p class="service-text">
+          Our web development solutions are driven by the tools that we deem
+          most suitable for the task at hand.
+        </p>
+        <p class="service-text">
+          Collaborating closely with our clients, we craft websites and
+          applications that deliver impactful performance, yield outcomes, and
+          ensure a streamlined business.
+        </p>
+        <button>Learn More</button>
+      </div>
+
+      <div class="service">
+        <h3 class="service-header">Branding</h3>
+        <p class="service-text">
+          Our web development solutions are driven by the tools that we deem
+          most suitable for the task at hand.
+        </p>
+        <p class="service-text">
+          Collaborating closely with our clients, we craft websites and
+          applications that deliver impactful performance, yield outcomes, and
+          ensure a streamlined business.
+        </p>
+        <button>Coming Soon</button>
+      </div>
+    </div>
   </div>
 
-  <div class="second">
-    <h3 class="service-header">Development</h3>
-    <p class="service-text">Our web development solutions are driven by the tools that we deem most
-      suitable for the task at hand.
-      <br>Collaborating closely with our clients, we craft websites and applications
-      that deliver impactful performance, yield outcomes, and ensure a streamlined business.</p>
-  </div>
+  <!-- <div class="newone">
+      <svg class="me" viewBox="0 0 50 50">
+        <defs>
+          <clipPath id="scroll">
+            <circle fill="none" id="outer-left" cx="25" cy="25" r="25" />
+          </clipPath>
+        </defs>
+        <image class="planet-image" href="./images/side-scroll.jpg" clip-path="url(#scroll)">
+          <animate attributeName="x" from="0" to="-10" dur="100s" repeatCount="indefinite" />
+        </image>
+      </svg>
+      <div class="shadow"></div>
+    </div> -->
 
+  <div class="contact"></div>
 
-  <div class="spacer">
-    <svg class="circles-svg" viewBox="0 0 300 50">
-      <defs>
-        <clipPath id="clipCircle">
-          <circle id="outer-left" cx="25" cy="25" r="25" />
-          <circle id="middle-left" cx="75" cy="25" r="25" />
-          <circle id="inner-left" cx="125" cy="25" r="25" />
-          <circle id="inner-right" cx="175" cy="25" r="25" />
-          <circle id="middle-right" cx="225" cy="25" r="25" />
-          <circle id="outer-right" cx="275" cy="25" r="25" />
-        </clipPath>
-      </defs>
-      <image class="circles-image" href="./images/text.jpg" clip-path="url(#clipCircle)" />
-    </svg>
-  </div>
+  <footer>
+    <div class="footer">
+      <img class="logo-img" src="./images/logo.png" alt="">
+      <div class="socials">
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Twitter</li>
+          <li>Pinterest</li>
+        </ul>
+      </div>
 
+      <div class="">
+        <ul>
+          <li>About</li>
+          <li>Services</li>
+          <li>Contact</li>
+        </ul>
+      </div>
 
+      <div class="policies">
+        <ul>
+          <li>Privacy Policy</li>
+          <li>Terms of Service</li>
+          <li>Address</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>

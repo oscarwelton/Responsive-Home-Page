@@ -12,6 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const initialFontSize = parseFloat(getComputedStyle(header).fontSize);
   const initialHeight = banner.offsetHeight;
 
+  function isElementInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
   const updateBanner = () => {
     const scroll = window.pageYOffset;
     const newSize = Math.max(initialFontSize, initialFontSize + scroll);
@@ -28,55 +39,38 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // const slideCircles = () => {
-  //   const circles = document.querySelector(".circles-svg");
-  //   const circle = document.getElementById("outer-left");
-  //   const circle2 = document.getElementById("middle-left");
-  //   const circle3 = document.getElementById("inner-left");
-  //   const circle4 = document.getElementById("inner-right");
-  //   const circle5 = document.getElementById("middle-right");
-  //   const circle6 = document.getElementById("outer-right");
+  const slideCircles = () => {
+    const scroll = window.pageYOffset / 10;
+    const circle = document.getElementById("outer-left");
+    const circle2 = document.getElementById("middle-left");
+    const circle3 = document.getElementById("inner-left");
+    const circle4 = document.getElementById("inner-right");
+    const circle5 = document.getElementById("middle-right");
 
-  //   const scroll = window.pageYOffset;
+    circle.setAttribute(
+      "transform",
+      `translate(0, -${(scroll * 0.2).toFixed(0)})`
+    );
+    circle2.setAttribute(
+      "transform",
+      `translate(0, -${(scroll * 0.4).toFixed(0)})`
+    );
+    circle3.setAttribute(
+      "transform",
+      `translate(0, -${(scroll * 0.6).toFixed(0)})`
+    );
+    circle4.setAttribute(
+      "transform",
+      `translate(0, -${(scroll * 0.8).toFixed(0)})`
+    );
+    circle5.setAttribute(
+      "transform",
+      `translate(0, -${(scroll).toFixed(0)})`
+    );
+  };
 
-  //   if (scroll * 0.3 < 151) {
-  //     // circle.setAttribute(
-  //     //   "transform",
-  //     //   `translate(${(scroll * 0.6).toFixed(0)}, 0)`
-  //     // );
-  //     circle2.setAttribute(
-  //       "transform",
-  //       `translate(-${(scroll * 0.1).toFixed(0)}, 0)`
-  //     );
-  //     circle3.setAttribute(
-  //       "transform",
-  //       `translate(-${(scroll * 0.2).toFixed(0)}, 0)`
-  //     );
-  //     circle4.setAttribute(
-  //       "transform",
-  //       `translate(${-(scroll * 0.3).toFixed(0)}, 0)`
-  //     );
-  //     circle5.setAttribute(
-  //       "transform",
-  //       `translate(${-(scroll * 0.4).toFixed(0)}, 0)`
-  //     );
-  //     circle6.setAttribute(
-  //       "transform",
-  //       `translate(${-(scroll * 0.5).toFixed(0)}, 0)`
-  //     );
 
-  //     const translationX = -(scroll * 0.5).toFixed(0);
-  //     if (translationX >= -150) {
-  //       circle6.setAttribute("transform", `translate(${translationX}, 0)`);
-  //     } else {
-  //       circle6.setAttribute("transform", `translate(-150, 0)`);
-  //     }
-  //   }
-
-  //   // if ((scroll * 0.3) > 151) {
-  //   //   circles.setAttribute("transform", `translate(${(scroll * 0.3).toFixed(0)}, 0)rotate(${(scroll * 0.1).toFixed(0)} 0 100)`)
-  //   // }
-  // };
+  window.addEventListener("scroll", slideCircles);
 
   const updateParallax = () => {
     const scroll = window.pageYOffset;
@@ -118,54 +112,5 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", updateBanner);
   window.addEventListener("scroll", updateParallax);
   window.addEventListener("resize", updateParallax);
-  window.addEventListener("scroll", slideCircles);
   updateParallax();
-
-  const ellipses = document.querySelectorAll(".elipse-1");
-
-  window.addEventListener("scroll", () => {
-    const scrollValue = window.scrollY;
-    const boxShadowValue = `inset ${-(scrollValue / 40).toFixed(0)}px ${-(
-      scrollValue / 50
-    ).toFixed(0)}px 15px -10px black`;
-
-    ellipses.forEach((elipse) => {
-      elipse.style.setProperty("box-shadow", boxShadowValue);
-    });
-  });
-
-  const svg = document.getElementById("clipCircle");
-
-  window.addEventListener("scroll", () => {
-    const scrollValue = window.scrollY;
-  });
-
-  // const designButton = document.getElementById("design");
-  // const developmentButton = document.getElementById("development");
-  // const brandingButton = document.getElementById("branding");
-  // const design = document.querySelector(".design")
-  // const development = document.querySelector(".development")
-  // const branding = document.querySelector(".branding");
-  // const face = document.querySelector(".face");
-
-  // designButton.addEventListener('click', () => {
-  //   design.classList.add("reveal");
-  //   face.classList.add("hide")
-  //   development.classList.remove("reveal");
-  //   branding.classList.remove("reveal")
-  // })
-
-  // developmentButton.addEventListener("click", () => {
-  //   face.classList.add("hide")
-  //   development.classList.add("reveal");
-  //   design.classList.remove("reveal");
-  //   branding.classList.remove("reveal")
-  // })
-
-  // brandingButton.addEventListener("click", () => {
-  //   face.classList.add("hide")
-  //   branding.classList.add("reveal");
-  //   development.classList.remove("reveal");
-  //   design.classList.remove("reveal")
-  // })
 });

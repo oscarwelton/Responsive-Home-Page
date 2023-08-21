@@ -12,7 +12,7 @@
   height: 75px;
 }
 
-.logo:hover::after {
+.logo:hover::before {
   content: "Studio";
   font-family: 'Unbounded', sans-serif;
   padding: 0.5rem;
@@ -21,25 +21,11 @@
 }
 
 .navbar {
-  display: flex;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 95%;
+  right: 0;
   z-index: 1;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1rem;
-}
-
-.nav-links li {
-  margin-left: 1rem;
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.nav-links li:hover {
-  text-decoration: underline;
-  transform: scale(1.1);
-  cursor: pointer;
 }

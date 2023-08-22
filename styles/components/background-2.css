@@ -6,7 +6,7 @@
 }
 
 .circles-image {
-  width: 500%;
+  width: 100%;
   height: auto;
   object-fit: cover;
   filter: grayscale(1) contrast(3) brightness(1.2) invert(1) saturate(0);
@@ -29,11 +29,13 @@
 }
 
 .title {
-  width: 75%;
-  margin: 50vh auto;
+  width: 100%;
+  height: 100vh;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
+  position: relative;
+  margin-bottom: 2rem;
 }
 
 .service-header {
@@ -52,10 +54,13 @@
   text-align: justify;
 }
 
+.box {
+  width: 100%;
+  height: 100%;
+}
 
 .service {
-  width: 75%;
-  margin: 0 auto 3rem 2rem;
+  border-radius: 2rem;
 }
 
 .service button {
@@ -66,6 +71,15 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.service button:hover {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 .bites {
@@ -84,6 +98,7 @@
 
 .services {
   position: relative;
+  display: flex;
 }
 
 .me {
@@ -108,7 +123,49 @@
   box-shadow: inset 40px 55px 110px black;
 }
 
-h2 {
+.title span {
   font-family: 'Unbounded', sans-serif;
   font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 3rem;
+}
+
+.title-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+
+.services-title {
+  margin: 0rem 2rem 0rem 2rem;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.letter {
+  font-weight: 900;
+  font-size: 7rem;
+  font-family: 'Unbounded', sans-serif;
+  transform-origin: top-left;
+  letter-spacing: 15px;
+}
+
+
+.service-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0rem 2rem;
 }

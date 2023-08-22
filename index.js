@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const slideCircles = () => {
-    const scroll = window.pageYOffset / 10;
+    const scroll = window.pageYOffset / 50;
     const circle = document.getElementById("outer-left");
     const circle2 = document.getElementById("middle-left");
     const circle3 = document.getElementById("inner-left");
@@ -49,23 +49,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     circle.setAttribute(
       "transform",
-      `translate(0, -${(scroll * 0.2).toFixed(0)})`
+      `translate(0, ${(scroll * 0.2).toFixed(0)}) scale(1,3)`
     );
     circle2.setAttribute(
       "transform",
-      `translate(0, -${(scroll * 0.4).toFixed(0)})`
+      `translate(0, ${(scroll * 0.4).toFixed(0)})`
     );
     circle3.setAttribute(
       "transform",
-      `translate(0, -${(scroll * 0.6).toFixed(0)})`
+      `translate(0, ${(scroll * 0.6).toFixed(0)})`
     );
     circle4.setAttribute(
       "transform",
-      `translate(0, -${(scroll * 0.8).toFixed(0)})`
+      `translate(0, ${(scroll * 0.8).toFixed(0)})`
     );
     circle5.setAttribute(
       "transform",
-      `translate(0, -${(scroll).toFixed(0)})`
+      `translate(0, ${(scroll).toFixed(0)})`
     );
   };
 
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     layerOne.setAttribute(
       "transform",
-      `translate(${-(scroll * 0.1).toFixed(0)}, ${-(scroll * 0.1).toFixed(0)})`
+      `translate(${-(scroll * 0.2).toFixed(0)}, ${-(scroll * 0.1).toFixed(0)})`
     );
     layerTwo.setAttribute(
       "transform",

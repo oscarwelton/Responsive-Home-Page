@@ -1,12 +1,14 @@
 .banner {
   height: 100vh;
-  overflow: clip;
-  min-height: 400px;
+  overflow: hidden;
 }
 
 .header-div {
-  position: relative;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
   height: 100%;
+  width: 100%;
 }
 
 .header {

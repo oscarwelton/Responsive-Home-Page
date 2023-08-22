@@ -1,13 +1,8 @@
 .bg-image {
-  position: absolute;
   height: 25vh;
-  object-fit: contain
 }
 
 .paint {
-  position: absolute;
-  overflow: hidden;
-  z-index: -1;
   filter: drop-shadow(24px -1px 4px rgba(0, 0, 0, 0.5));
 }
 

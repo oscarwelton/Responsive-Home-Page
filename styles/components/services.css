@@ -1,13 +1,13 @@
-
 .service {
+  width: 75%;
   flex: 1;
   max-width: 1000px;
-  padding: 2rem;
-  border: 1px solid black;
-  border-radius: 1rem;
-  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.496);
+  padding: 1.5rem;
   margin-right: 2rem;
-  background-color: white;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s, transform 1s;
+  animation-delay: 0.5s;
 }
 
 .service-header {
@@ -15,22 +15,19 @@
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 10px;
   margin: 0 0 1rem 0;
-  font-weight: 900;
+  font-weight: 500;
 }
 
 .service-text {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1.2;
   margin-bottom: 1rem;
   text-align: justify;
 }
 
-
-
 .services {
   position: relative;
-  display: flex;
   background-image: url(../../images/svgs/circles.svg);
   background-position: right;
   background-repeat: no-repeat;
@@ -45,34 +42,22 @@
 
 
 .services-title {
-  margin: 0rem 1.5rem 0rem 2rem;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  margin: 0rem 0.5rem 0rem 1rem;
 }
 
-.letter {
-  font-weight: 900;
-  font-size: 7rem;
-  font-family: 'Unbounded', sans-serif;
-  transform-origin: top-left;
+.service-title {
+  font-weight: 500;
+  font-size: 5rem;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 15px;
 }
 
-
-.service-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 .middle {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 5rem 2rem 5rem 0rem;
+  margin: 1rem 2rem 1rem 0rem;
 }
 
 .end {

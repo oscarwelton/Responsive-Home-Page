@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+
+
+
   const updateParallax = () => {
     const scroll = window.pageYOffset;
 

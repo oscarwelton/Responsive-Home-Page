@@ -31,6 +31,9 @@
 .services {
   position: relative;
   display: flex;
+  background-image: url(../../images/svgs/circles.svg);
+  background-position: right;
+  background-repeat: no-repeat;
 }
 
 .services svg {

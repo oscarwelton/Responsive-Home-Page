@@ -1,6 +1,7 @@
 .banner {
   height: 100vh;
   overflow: clip;
+  min-height: 400px;
 }
 
 .header-div {

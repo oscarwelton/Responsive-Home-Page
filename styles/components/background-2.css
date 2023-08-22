@@ -36,13 +36,16 @@
   font-size: 2rem;
   position: relative;
   margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .service-header {
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 10px;
-  margin: 1rem 0rem;
+  margin: 0 0 1rem 0;
   font-weight: 900;
 }
 
@@ -60,7 +63,14 @@
 }
 
 .service {
-  border-radius: 2rem;
+  flex: 1;
+  max-width: 1000px;
+  padding: 2rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 3px 3px black;
+  margin-right: 2rem;
+  background-color: white;
 }
 
 .service button {
@@ -73,6 +83,7 @@
   font-weight: 500;
   transition: all 0.2s ease;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  align-self: flex-start;
 }
 
 .service button:hover {
@@ -99,6 +110,13 @@
 .services {
   position: relative;
   display: flex;
+}
+
+.services svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
 
 .me {
@@ -144,13 +162,14 @@
 }
 
 .services-title {
-  margin: 0rem 2rem 0rem 2rem;
+  margin: 0rem 1.5rem 0rem 2rem;
   width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
+
 .letter {
   font-weight: 900;
   font-size: 7rem;
@@ -164,8 +183,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  padding: 0rem 2rem;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5rem 2rem 5rem 0rem;
+}
+
+.end {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }

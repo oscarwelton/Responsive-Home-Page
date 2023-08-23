@@ -6,3 +6,11 @@
 @import "./components/title-section.css";
 @import "./components/footer.css";
 @import "./media.css";
+
+
+:root {
+  --green: #7fc29bff;
+  --blue: #4d9de0ff;
+  --red: #e15554ff;
+  --yellow: #e6c74cff;
+}

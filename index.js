@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const layerFive = document.getElementById("layer-5");
   const layerSix = document.getElementById("layer-6");
   const layerSeven = document.getElementById("layer-7");
+  const layerEight = document.getElementById("layer-8");
 
   const header = document.querySelector(".header");
   const headerDiv = document.querySelector(".header-div");
@@ -90,6 +91,12 @@ document.addEventListener("DOMContentLoaded", function () {
       ).toFixed(0)})`
     );
     layerSeven.setAttribute(
+      "transform",
+      `translate(${(scroll * 0.7).toFixed(0)}, ${(scroll * 0.3).toFixed(
+        0
+      )}), rotate(-${(scroll * 0.1).toFixed(0)})`
+    );
+    layerEight.setAttribute(
       "transform",
       `translate(${(scroll * 0.7).toFixed(0)}, ${(scroll * 0.3).toFixed(
         0

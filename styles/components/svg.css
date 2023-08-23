@@ -3,7 +3,7 @@
 }
 
 .paint {
-  filter: drop-shadow(24px -1px 4px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(15px 0px 4px rgba(0, 0, 0, 0.3));
 }
 
 .path {

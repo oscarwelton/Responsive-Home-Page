@@ -1,8 +1,8 @@
 .quote {
-  width: 100%;
   font-weight: 900;
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
+  margin: 3rem 0;
 }
 
 
@@ -14,6 +14,7 @@
   align-items: center;
   text-align: center;
   overflow: hidden;
+  margin-bottom: 2rem;
 }
 
 /* .about {
@@ -33,7 +34,6 @@
 
 
 .about div {
-  margin-top: 2rem;
   width: 43%;
   min-width: 300px;
   text-align: justify;

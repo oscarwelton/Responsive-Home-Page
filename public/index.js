@@ -141,6 +141,21 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
+  const menu = document.querySelector(".logo");
+  const form = document.querySelector(".form");
+
+  let formOpen = false;
+
+  menu.addEventListener("click", () => {
+    if (formOpen) {
+      form.style.display = "none";
+      formOpen = false;
+    } else {
+      form.style.display = "flex";
+      formOpen = true;
+    }
+  });
+
   const sticky = document.querySelector(".break");
   const left = document.querySelector(".left");
   const right = document.querySelector(".right");

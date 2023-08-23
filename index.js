@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         banner.style.overflow = "visible";
       }
     }
-  };
+  }
 
   const services = document.querySelectorAll(".service");
   function fadeInOnScroll() {
@@ -94,13 +95,43 @@ document.addEventListener("DOMContentLoaded", function () {
         0
       )}), rotate(-${(scroll * 0.1).toFixed(0)})`
     );
-  };
+  }
 
   function grow() {
     const filler = document.getElementById("filler");
     if (isElementInViewport(filler)) {
-      console.log("hello world")
+      console.log("hello world");
     }
+  }
+
+  const rowOne = document.getElementById("row-one");
+  const rowTwo = document.getElementById("row-two");
+  const rowThree = document.getElementById("row-three");
+  const rowFour = document.getElementById("row-four");
+  const rowFive = document.getElementById("row-five");
+
+  function cubes() {
+    const scroll = window.pageYOffset;
+    rowOne.setAttribute(
+      "transform",
+      `translate(${-(scroll * 0.5).toFixed(0)}, 0)`
+    );
+    rowTwo.setAttribute(
+      "transform",
+      `translate(${-(scroll * 0.4).toFixed(0)}, 0)`
+    );
+    rowThree.setAttribute(
+      "transform",
+      `translate(${-(scroll * 0.3).toFixed(0)}, 0)`
+    );
+    rowFour.setAttribute(
+      "transform",
+      `translate(${-(scroll * 0.2).toFixed(0)}, 0)`
+    );
+    rowFive.setAttribute(
+      "transform",
+      `translate(${-(scroll * 0.1).toFixed(0)}, 0)`
+    );
   }
 
   const sticky = document.querySelector(".break");
@@ -118,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // window.addEventListener("scroll", animateElements);
   // window.addEventListener("load", animateElements);
-  window.addEventListener("scroll", updateBanner, grow);
+  window.addEventListener("scroll", cubes);
   window.addEventListener("scroll", updateParallax);
   window.addEventListener("resize", updateParallax);
   updateParallax();

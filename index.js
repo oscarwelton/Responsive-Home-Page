@@ -8,62 +8,58 @@ document.addEventListener("DOMContentLoaded", function () {
   const layerSeven = document.getElementById("layer-7");
 
   const header = document.querySelector(".header");
-  const headerDiv = document.querySelector(".header-div")
+  const headerDiv = document.querySelector(".header-div");
   const banner = document.querySelector(".banner");
   const initialFontSize = parseFloat(getComputedStyle(header).fontSize);
   const initialHeight = banner.offsetHeight;
 
   function isElementInViewport(element) {
-    const rect = element.getBoundingClientRect();
+    var rect = element.getBoundingClientRect();
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
 
-  const updateBanner = () => {
+  function updateBanner() {
     const scroll = window.pageYOffset;
     const newSize = Math.max(initialFontSize, initialFontSize + scroll);
 
     if (scroll < 500) {
-      // banner.style.transform = `translateY(-${scroll / 3}px)`
-      // headerDiv.style.transform = `translateY(-${scroll / 3}px)`;
       header.style.fontSize = `${newSize}px`;
       header.style.opacity = 1 - scroll / 300;
-      banner.style.overflow = 'hidden'
+      banner.style.overflow = "hidden";
 
       if (header.style.opacity < 0) {
         header.style.opacity = 0;
       }
 
       if (header.style.opacity > 0) {
-        banner.style.overflow = 'visible'
+        banner.style.overflow = "visible";
       }
     }
   };
 
-
-  const services = document.querySelectorAll('.service');
+  const services = document.querySelectorAll(".service");
   function fadeInOnScroll() {
-    services.forEach(service => {
+    services.forEach((service) => {
       const serviceTop = service.getBoundingClientRect().top;
       const windowHeight = window.innerHeight;
 
       if (serviceTop + 200 < windowHeight) {
         service.style.opacity = 1;
-        service.style.transform = 'translateX(0)';
+        service.style.transform = "translateX(0)";
       }
     });
   }
 
-  window.addEventListener('scroll', fadeInOnScroll);
-  window.addEventListener('resize', fadeInOnScroll);
+  window.addEventListener("scroll", fadeInOnScroll);
+  window.addEventListener("resize", fadeInOnScroll);
   fadeInOnScroll();
 
-  const updateParallax = () => {
+  function updateParallax() {
     const scroll = window.pageYOffset;
 
     layerOne.setAttribute(
@@ -100,7 +96,29 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   };
 
-  window.addEventListener("scroll", updateBanner);
+  function grow() {
+    const filler = document.getElementById("filler");
+    if (isElementInViewport(filler)) {
+      console.log("hello world")
+    }
+  }
+
+  const sticky = document.querySelector(".break");
+  const left = document.querySelector(".left");
+  const right = document.querySelector(".right");
+
+  // function animateElements() {
+  //   if (isElementInViewport(sticky)) {
+  //     console.log("true")
+  //     left.classList.add("animate-slide-in");
+  //     right.classList.add("animate-slide-in");
+  //     sticky.style.position = 'relative'
+  //   }
+  // }
+
+  // window.addEventListener("scroll", animateElements);
+  // window.addEventListener("load", animateElements);
+  window.addEventListener("scroll", updateBanner, grow);
   window.addEventListener("scroll", updateParallax);
   window.addEventListener("resize", updateParallax);
   updateParallax();

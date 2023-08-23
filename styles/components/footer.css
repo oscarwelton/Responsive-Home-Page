@@ -3,6 +3,7 @@
   background-image: url(../../images/svgs/footer.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 .footer-logo {
@@ -29,12 +30,11 @@
 
 
 .links ul {
-  margin-right: 3rem;
   padding: 1rem;
 }
 
 
 .spacer {
-  height: 200px;
+  height: 240px;
   width: 100%;
 }

@@ -1,12 +1,18 @@
-.break h2 {
+.quote {
+  width: 100%;
+  font-weight: 900;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
+
 .break {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  height: 100vh;
-  padding: 2rem;
+  overflow: hidden;
 }
 
 /* .about {
@@ -20,13 +26,33 @@
 .about {
   width: 80%;
   display: flex;
-  margin: auto;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 
 .about div {
   margin-top: 2rem;
-  width: 40%;
+  width: 43%;
+  min-width: 300px;
   text-align: justify;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*
+.left {
+  opacity: 0;
+  transform: translate(-50%,0);
+  transition: opacity 2s, transform 3s;
+}
+
+.right {
+  opacity: 0;
+  transform: translate(50%,0);
+  transition: opacity 2s, transform 3s;
+} */
+
+.animate-slide-in {
+  opacity: 1;
+  transform: translate(0, 0);
 }

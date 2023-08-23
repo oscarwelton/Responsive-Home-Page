@@ -7,13 +7,11 @@
 }
 
 .path {
-  stroke-width: 3px;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation-delay: 2s;
-  animation: dash 20s ease-in forwards;
+  animation: dash 5s ease forwards;
 }
 
 .path-2 {

@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // window.addEventListener("scroll", animateElements);
   // window.addEventListener("load", animateElements);
   window.addEventListener("scroll", cubes);
+  window.addEventListener("scroll", updateBanner);
   window.addEventListener("scroll", updateParallax);
   window.addEventListener("resize", updateParallax);
   updateParallax();

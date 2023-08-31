@@ -102,13 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  function grow() {
-    const filler = document.getElementById("filler");
-    if (isElementInViewport(filler)) {
-      console.log("hello world");
-    }
-  }
-
   const rowOne = document.getElementById("row-one");
   const rowTwo = document.getElementById("row-two");
   const rowThree = document.getElementById("row-three");
@@ -117,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function cubes() {
     const scroll = window.pageYOffset;
+
     rowOne.setAttribute(
       "transform",
       `translate(${-(scroll * 0.5).toFixed(0)}, 0)`
@@ -160,37 +154,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const dotThree = document.getElementById("dot-3");
   const dotFour = document.getElementById("dot-4");
   const quote = document.querySelector(".break");
-  let startScroll = 0;
+  const mask = document.getElementById("mask-circle");
+
   let startedGrowing = false;
+  let startScroll = 0;
 
   function growDot() {
     const scroll = window.pageYOffset;
+    const width = window.innerWidth;
+    const scrollOffset = scroll - startScroll;
 
     if (!startedGrowing && isElementAtTop(quote)) {
       startedGrowing = true;
       startScroll = scroll;
-      window.addEventListener("scroll", continueGrowingDot);
     }
 
-    if (startedGrowing) {
-      const scrollOffset = scroll - startScroll;
-      dot.setAttribute("r", `${(scrollOffset * 0.2).toFixed(0)}`);
-      dotOne.setAttribute("r", `${(scrollOffset * 0.25).toFixed(0)}`);
-      dotTwo.setAttribute("r", `${(scrollOffset * 0.3).toFixed(0)}`);
-      dotThree.setAttribute("r", `${(scrollOffset * 0.35).toFixed(0)}`);
-      dotFour.setAttribute("r", `${(scrollOffset * 0.4).toFixed(0)}`);
+    if (startedGrowing && isElementAtTop(quote)) {
+      if (scrollOffset > 0) {
+        dot.setAttribute("r", `${(scrollOffset * 0.2).toFixed(0)}`);
+        dotOne.setAttribute("r", `${(scrollOffset * 0.4).toFixed(0)}`);
+        dotTwo.setAttribute("r", `${(scrollOffset * 0.6).toFixed(0)}`);
+        dotThree.setAttribute("r", `${(scrollOffset * 0.8).toFixed(0)}`);
+        dotFour.setAttribute("r", `${(scrollOffset * 1).toFixed(0)}`);
+      }
+    }
+
+    if (scrollOffset > width) {
+      window.removeEventListener("scroll", growDot);
     }
   }
 
   function isElementAtTop(element) {
     const rect = element.getBoundingClientRect();
     return rect.top <= 0;
-  }
-
-  function continueGrowingDot() {
-    const scroll = window.pageYOffset;
-    const scrollOffset = scroll - startScroll;
-    dot.setAttribute("r", `${(scrollOffset * 0.2).toFixed(0)}`);
   }
 
   window.addEventListener("scroll", growDot);

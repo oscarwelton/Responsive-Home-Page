@@ -148,13 +148,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  const breakDiv = document.querySelector(".break");
   const dot = document.getElementById("dot");
   const dotOne = document.getElementById("dot-1");
   const dotTwo = document.getElementById("dot-2");
   const dotThree = document.getElementById("dot-3");
   const dotFour = document.getElementById("dot-4");
   const quote = document.querySelector(".break");
-  const mask = document.getElementById("mask-circle");
 
   let startedGrowing = false;
   let startScroll = 0;
@@ -163,6 +163,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const scroll = window.pageYOffset;
     const width = window.innerWidth;
     const scrollOffset = scroll - startScroll;
+
+    if (scrollOffset > width) {
+      breakDiv.style.display = "hidden";
+    }
 
     if (!startedGrowing && isElementAtTop(quote)) {
       startedGrowing = true;
@@ -179,9 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    if (scrollOffset > width) {
-      window.removeEventListener("scroll", growDot);
-    }
+
   }
 
   function isElementAtTop(element) {

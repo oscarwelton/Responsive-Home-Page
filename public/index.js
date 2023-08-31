@@ -9,10 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const layerEight = document.getElementById("layer-8");
 
   const header = document.querySelector(".header");
-  const headerDiv = document.querySelector(".header-div");
   const banner = document.querySelector(".banner");
   const initialFontSize = parseFloat(getComputedStyle(header).fontSize);
-  const initialHeight = banner.offsetHeight;
 
   function isElementInViewport(element) {
     var rect = element.getBoundingClientRect();
@@ -156,21 +154,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const sticky = document.querySelector(".break");
-  const left = document.querySelector(".left");
-  const right = document.querySelector(".right");
+  const dot = document.getElementById("dot");
+  const dotOne = document.getElementById("dot-1");
+  const dotTwo = document.getElementById("dot-2");
+  const dotThree = document.getElementById("dot-3");
+  const dotFour = document.getElementById("dot-4");
+  const quote = document.querySelector(".break");
+  let startScroll = 0;
+  let startedGrowing = false;
 
-  // function animateElements() {
-  //   if (isElementInViewport(sticky)) {
-  //     console.log("true")
-  //     left.classList.add("animate-slide-in");
-  //     right.classList.add("animate-slide-in");
-  //     sticky.style.position = 'relative'
-  //   }
-  // }
+  function growDot() {
+    const scroll = window.pageYOffset;
 
-  // window.addEventListener("scroll", animateElements);
-  // window.addEventListener("load", animateElements);
+    if (!startedGrowing && isElementAtTop(quote)) {
+      startedGrowing = true;
+      startScroll = scroll;
+      window.addEventListener("scroll", continueGrowingDot);
+    }
+
+    if (startedGrowing) {
+      const scrollOffset = scroll - startScroll;
+      dot.setAttribute("r", `${(scrollOffset * 0.2).toFixed(0)}`);
+      dotOne.setAttribute("r", `${(scrollOffset * 0.25).toFixed(0)}`);
+      dotTwo.setAttribute("r", `${(scrollOffset * 0.3).toFixed(0)}`);
+      dotThree.setAttribute("r", `${(scrollOffset * 0.35).toFixed(0)}`);
+      dotFour.setAttribute("r", `${(scrollOffset * 0.4).toFixed(0)}`);
+    }
+  }
+
+  function isElementAtTop(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top <= 0;
+  }
+
+  function continueGrowingDot() {
+    const scroll = window.pageYOffset;
+    const scrollOffset = scroll - startScroll;
+    dot.setAttribute("r", `${(scrollOffset * 0.2).toFixed(0)}`);
+  }
+
+  window.addEventListener("scroll", growDot);
+
   window.addEventListener("scroll", cubes);
   window.addEventListener("scroll", updateBanner);
   window.addEventListener("scroll", updateParallax);

@@ -39,6 +39,6 @@
   width: 100%;
 }
 
-.mid-spacer svg {
-  filter: drop-shadow(-10px 10px 4px rgba(0, 0, 0, 0.303));
+#cube-stack {
+  filter: drop-shadow(-10px -5px 4px rgba(0, 0, 0, 0.303));
 }

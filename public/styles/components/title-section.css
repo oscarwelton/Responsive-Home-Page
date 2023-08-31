@@ -1,13 +1,14 @@
 .quote {
-  font-weight: 900;
   font-family: 'Montserrat', sans-serif;
-  font-size: 3rem;
-  margin: 3rem 0;
+  font-size: 13px;
 }
 
 
 .break {
   min-height: 100vh;
+  z-index: -2;
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,13 +18,6 @@
   margin-bottom: 2rem;
 }
 
-/* .about {
-  padding: 2rem;
-  margin: auto;
-  text-align: center;
-  color: white;
-  background-color: black;
-} */
 
 .about {
   width: 80%;
@@ -56,4 +50,20 @@
 .animate-slide-in {
   opacity: 1;
   transform: translate(0, 0);
+}
+
+#dot-1 {
+  fill: var(--red)
+}
+
+#dot-2 {
+  fill: var(--blue)
+}
+
+#dot-3 {
+  fill: var(--yellow)
+}
+
+#dot-4 {
+  fill: var(--green)
 }

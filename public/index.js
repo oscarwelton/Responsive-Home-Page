@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateParallax() {
     const scroll = window.pageYOffset;
-
     layerOne.setAttribute(
       "transform",
       `translate(${-(scroll * 0.2).toFixed(0)}, ${-(scroll * 0.1).toFixed(0)})`
@@ -108,36 +107,35 @@ document.addEventListener("DOMContentLoaded", function () {
   const rowFour = document.getElementById("row-four");
   const rowFive = document.getElementById("row-five");
 
-  function cubes() {
-    const scroll = window.pageYOffset;
+  // function cubes() {
+  //   const scroll = window.pageYOffset;
 
-    rowOne.setAttribute(
-      "transform",
-      `translate(${-(scroll * 0.5).toFixed(0)}, 0)`
-    );
-    rowTwo.setAttribute(
-      "transform",
-      `translate(${-(scroll * 0.4).toFixed(0)}, 0)`
-    );
-    rowThree.setAttribute(
-      "transform",
-      `translate(${-(scroll * 0.3).toFixed(0)}, 0)`
-    );
-    rowFour.setAttribute(
-      "transform",
-      `translate(${-(scroll * 0.2).toFixed(0)}, 0)`
-    );
-    rowFive.setAttribute(
-      "transform",
-      `translate(${-(scroll * 0.1).toFixed(0)}, 0)`
-    );
-  }
+  //   rowOne.setAttribute(
+  //     "transform",
+  //     `translate(${-(scroll * 0.5).toFixed(0)}, 0)`
+  //   );
+  //   rowTwo.setAttribute(
+  //     "transform",
+  //     `translate(${-(scroll * 0.4).toFixed(0)}, 0)`
+  //   );
+  //   rowThree.setAttribute(
+  //     "transform",
+  //     `translate(${-(scroll * 0.3).toFixed(0)}, 0)`
+  //   );
+  //   rowFour.setAttribute(
+  //     "transform",
+  //     `translate(${-(scroll * 0.2).toFixed(0)}, 0)`
+  //   );
+  //   rowFive.setAttribute(
+  //     "transform",
+  //     `translate(${-(scroll * 0.1).toFixed(0)}, 0)`
+  //   );
+  // }
 
   const menu = document.querySelector(".logo");
   const form = document.querySelector(".form");
 
   let formOpen = false;
-
   menu.addEventListener("click", () => {
     if (formOpen) {
       form.style.display = "none";
@@ -158,15 +156,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let startedGrowing = false;
   let startScroll = 0;
+  let scroll = window.pageYOffset;
+  let height = window.innerHeight;
+  let scrollOffset = scroll - startScroll;
 
   function growDot() {
-    const scroll = window.pageYOffset;
-    const width = window.innerWidth;
-    const scrollOffset = scroll - startScroll;
-
-    if (scrollOffset > width) {
-      breakDiv.style.display = "hidden";
-    }
 
     if (!startedGrowing && isElementAtTop(quote)) {
       startedGrowing = true;
@@ -174,7 +168,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (startedGrowing && isElementAtTop(quote)) {
+      if (scrollOffset * 0.85 > height) {
+        breakDiv.style.visibility = "hidden";
+        breakDiv.style.position = "relative";
+      }
       if (scrollOffset > 0) {
+
         dot.setAttribute("r", `${(scrollOffset * 0.2).toFixed(0)}`);
         dotOne.setAttribute("r", `${(scrollOffset * 0.4).toFixed(0)}`);
         dotTwo.setAttribute("r", `${(scrollOffset * 0.6).toFixed(0)}`);
@@ -182,8 +181,6 @@ document.addEventListener("DOMContentLoaded", function () {
         dotFour.setAttribute("r", `${(scrollOffset * 1).toFixed(0)}`);
       }
     }
-
-
   }
 
   function isElementAtTop(element) {
@@ -193,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", growDot);
 
-  window.addEventListener("scroll", cubes);
+  // window.addEventListener("scroll", cubes);
   window.addEventListener("scroll", updateBanner);
   window.addEventListener("scroll", updateParallax);
   window.addEventListener("resize", updateParallax);

@@ -1,28 +1,17 @@
 .quote {
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-}
-
-
-.about-section {
-
+  font-weight: 700;
 }
 
 .about {
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 2rem;
+  height: 100vh;
+  box-sizing: border-box;
+  border: 2px solid black;
+  padding: 1rem;
+  margin-left: auto;
 }
 
-
-.about div {
-  width: 43%;
-  min-width: 300px;
-  text-align: justify;
-  font-family: 'Montserrat', sans-serif;
-}
 
 #rect {
   height: 100vh;
@@ -34,8 +23,24 @@
   align-items: center;
   position: sticky;
   top: 0;
+  margin-bottom: 20vh;
 }
 
+
+.portraits {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.portrait {
+  width: 23%;
+  height: 500px;
+  border: 1px solid black;
+  background-image: url(../../images/pink-min.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 
 
@@ -60,6 +65,17 @@
   fill: var(--green);
 }
 
-#svg-circles circle {
-  filter: drop-shadow(-2px 0px 5px rgba(0, 0, 0, 0.3))
+
+.fade-in {
+  animation: in 2s;
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

@@ -26,6 +26,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
   width: 100vw;
+  scroll-snap-type: mandatory;
 
   scrollbar-width: none;
   -ms-overflow-style: none;

@@ -156,11 +156,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let startedGrowing = false;
   let startScroll = 0;
-  let scroll = window.pageYOffset;
-  let height = window.innerHeight;
-  let scrollOffset = scroll - startScroll;
 
   function growDot() {
+    const scroll = window.pageYOffset;
+    const height = window.innerHeight;
+    const scrollOffset = scroll - startScroll;
+
+
 
     if (!startedGrowing && isElementAtTop(quote)) {
       startedGrowing = true;

@@ -27,20 +27,6 @@
 }
 
 
-.portraits {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.portrait {
-  width: 23%;
-  height: 500px;
-  border: 1px solid black;
-  background-image: url(../../images/pink-min.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
 
 
 

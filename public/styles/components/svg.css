@@ -7,31 +7,13 @@
 }
 
 .path {
+  fill: none;
+  stroke: whitesmoke;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: dash 5s ease forwards;
-}
-
-.path-2 {
-  stroke-width: 3px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation-delay: 10s;
-  animation: dash 20s ease-in forwards;
-}
-
-.path-3 {
-  stroke-width: 3px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation-delay: 15s;
-  animation: dash 20s ease-in forwards;
 }
 
 @keyframes dash {

@@ -87,6 +87,9 @@ a {
   font-weight: 500;
   font-size: 1rem;
 }
+a:hover {
+  text-decoration: underline;
+}
 
 li {
   list-style: none;
@@ -108,7 +111,6 @@ li {
   align-items: center;
 }
 .navbar .navbar-links {
-  width: 50%;
   text-align: right;
 }
 .navbar img {
@@ -345,6 +347,9 @@ li {
 }
 
 @media only screen and (max-width: 600px) {
+  .navbar .navbar-links {
+    display: none;
+  }
   .form .form-row {
     display: block;
   }

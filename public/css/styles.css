@@ -58,11 +58,6 @@ table {
   border-spacing: 0;
 }
 
-@media screen and (max-width: 600px) {
-  .content-block {
-    display: block;
-  }
-}
 h1 {
   font-size: 5rem;
   font-weight: 700;
@@ -179,8 +174,6 @@ li {
 }
 .content .content-header {
   font-weight: 700;
-}
-.content .content-header h4 {
   margin-bottom: 2rem;
 }
 .content .content-text {
@@ -243,7 +236,7 @@ li {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  max-width: 700px;
+  max-width: 600px;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -287,38 +280,46 @@ li {
   font-size: 1.2rem;
   font-weight: 500;
   width: 25%;
-  margin: 1rem;
 }
 .form #area-label {
   align-items: flex-start;
 }
 .form .form-row {
   display: flex;
+  padding: 1rem;
   justify-content: space-between;
-  margin: 2rem 0;
 }
 .form .form-button {
-  float: right;
   border-radius: 0px 10px 0px 10px;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.25rem;
   background-color: white;
-  border: 1px solid black;
   font-size: 1.5rem;
   width: fit-content;
   transition: all 0.2s ease;
   position: relative;
+  border: none;
 }
 .form .form-button:hover {
   cursor: pointer;
-  box-shadow: 4px 4px black;
 }
 .form #close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0;
+  right: 0;
   font-size: 1rem;
 }
 
+.draw {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: draw 30s linear forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 .footer {
   border-top: 1px solid black;
   display: flex;
@@ -343,6 +344,41 @@ li {
   margin: 1rem 1rem 0rem 1rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .form .form-row {
+    display: block;
+  }
+  .form input {
+    margin-left: 0;
+    width: 100%;
+  }
+  .form label {
+    margin-bottom: 1rem;
+  }
+  .banner {
+    flex-direction: column;
+  }
+  .banner .image {
+    height: 23%;
+    width: 100%;
+  }
+  .header h1 {
+    font-size: 3rem;
+  }
+  .header h2 {
+    font-size: 1.5rem;
+  }
+  .content .content-block {
+    flex-direction: column;
+    width: 100%;
+  }
+  .content .content-text {
+    width: 100%;
+  }
+  .content .content-list {
+    text-align: center;
+  }
+}
 :root {
   --shadow: 8px 8px 7px #00000024;
 }

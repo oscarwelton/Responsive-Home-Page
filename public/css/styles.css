@@ -74,7 +74,7 @@ h2 {
 }
 
 h3 {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.5rem;
 }
 
@@ -162,7 +162,7 @@ li {
 }
 
 .content {
-  max-width: 1000px;
+  max-width: 900px;
 }
 .content .content-block {
   display: flex;
@@ -191,15 +191,15 @@ li {
   border: 1px solid black;
   z-index: 3;
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  height: 100px;
+  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: sticky;
+  position: fixed;
   bottom: 1rem;
-  float: right;
+  right: 1rem;
   background-color: white;
   transition: background-color 0.5s ease;
 }
@@ -220,14 +220,6 @@ li {
   transform: translate(-50%, -50%);
   height: 100vh;
   width: 100vw;
-}
-
-#close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  border: none;
-  width: fit-content;
 }
 
 .form {
@@ -256,7 +248,6 @@ li {
 .form textarea:focus,
 .form select:focus {
   outline: none;
-  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.1411764706);
 }
 .form textarea {
   resize: none;
@@ -270,34 +261,47 @@ li {
   justify-content: space-between;
   margin: 2rem 0;
 }
-.form #submit {
+.form .form-button {
   float: right;
   border-radius: 0px 10px 0px 10px;
   padding: 0.5rem 1rem;
   background-color: black;
-  border: none;
+  border: 1px solid black;
   color: white;
   font-size: 1.5rem;
   width: fit-content;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.form .form-button:hover {
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  box-shadow: -4px -4px black;
 }
 
 .footer {
   border-top: 1px solid black;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding-top: 2rem;
   margin-bottom: 2rem;
+}
+.footer .footer-logo {
+  margin: 1rem 5rem 1rem 0;
 }
 .footer .links-container {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 60%;
   flex-wrap: wrap;
 }
 .footer .footer-links {
   display: flex;
   flex-direction: column;
+  margin: 1rem 1rem 0rem 1rem;
 }
 
 :root {

@@ -5,12 +5,12 @@ window.addEventListener("load", () => {
 
   contact.addEventListener("click", () => {
     if (!contactOpen) {
-      contactForm.style.display = "none";
-      contact.innerHTML = "CONTACT";
-      contactOpen = true;
-    } else {
       contactForm.style.display = "block";
       contact.innerHTML = "SEND";
+      contactOpen = true;
+    } else {
+      contactForm.style.display = "none";
+      contact.innerHTML = "CONTACT";
       contactOpen = false;
     }
   });

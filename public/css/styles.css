@@ -167,9 +167,10 @@ li {
 }
 
 .content {
-  max-width: 900px;
+  position: relative;
 }
 .content .content-block {
+  width: 70%;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid black;
@@ -190,6 +191,13 @@ li {
 
 .portfolio {
   border-bottom: none !important;
+}
+
+.content-svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .contact {
@@ -215,7 +223,7 @@ li {
 .contact-form {
   display: none;
   background-image: url(../resources/svgs/contact.svg);
-  background-color: rgba(165, 165, 165, 0.5);
+  background-color: rgba(255, 255, 255, 0.75);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

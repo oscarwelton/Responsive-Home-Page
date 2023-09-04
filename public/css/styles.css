@@ -74,6 +74,10 @@ h3 {
   font-size: 1.5rem;
 }
 
+p {
+  margin-bottom: 1rem;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -81,8 +85,15 @@ body {
 a {
   text-decoration: none;
   color: black;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 1rem;
+}
+
+li {
+  list-style: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
 }
 
 .navbar {
@@ -159,13 +170,17 @@ a {
 .content .content-header {
   font-weight: 700;
 }
+.content .content-header h4 {
+  margin-bottom: 2rem;
+}
 .content .content-text {
   text-align: justify;
   width: 70%;
   line-height: 1.5;
 }
-.content .content-text p {
-  margin-bottom: 1rem;
+
+.portfolio {
+  border-bottom: none !important;
 }
 
 .contact {
@@ -186,6 +201,23 @@ a {
 .contact:hover {
   cursor: pointer;
   background-color: red;
+}
+
+.footer {
+  border-top: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+.footer .links-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+.footer .footer-links {
+  display: flex;
+  flex-direction: column;
 }
 
 :root {

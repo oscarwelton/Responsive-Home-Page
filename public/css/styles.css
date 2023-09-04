@@ -133,16 +133,16 @@ li {
   transition: height 0.5s ease-in-out;
 }
 .banner .one {
-  background-image: url(../images/one.jpg);
+  background-image: url(../resources/images/one.jpg);
 }
 .banner .two {
-  background-image: url(../images/two.jpg);
+  background-image: url(../resources/images/two.jpg);
 }
 .banner .three {
-  background-image: url(../images/three.jpg);
+  background-image: url(../resources/images/three.jpg);
 }
 .banner .four {
-  background-image: url(../images/four.jpg);
+  background-image: url(../resources/images/four.jpg);
 }
 
 .header {
@@ -185,6 +185,7 @@ li {
 
 .contact {
   border: 1px solid black;
+  z-index: 3;
   border-radius: 50%;
   width: 150px;
   height: 150px;
@@ -203,9 +204,32 @@ li {
   background-color: red;
 }
 
+.contact-form {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100vw;
+}
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  max-width: 600px;
+  width: 100%;
+}
+
 .footer {
   border-top: 1px solid black;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 2rem;
   margin-bottom: 2rem;
@@ -214,6 +238,7 @@ li {
   display: flex;
   justify-content: space-between;
   width: 70%;
+  flex-wrap: wrap;
 }
 .footer .footer-links {
   display: flex;

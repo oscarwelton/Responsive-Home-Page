@@ -1,4 +1,3 @@
-@import "./media.css";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -59,6 +58,11 @@ table {
   border-spacing: 0;
 }
 
+@media screen and (max-width: 600px) {
+  .content-block {
+    display: block;
+  }
+}
 h1 {
   font-size: 5rem;
   font-weight: 700;
@@ -205,6 +209,8 @@ li {
 }
 
 .contact-form {
+  background-image: url(../resources/svgs/contact.svg);
+  background-color: rgba(165, 165, 165, 0.5);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -216,14 +222,63 @@ li {
   width: 100vw;
 }
 
+#close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  width: fit-content;
+}
+
 .form {
+  padding: 2rem;
+  border-radius: 10px 10px 10px 10px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+}
+.form input,
+.form textarea,
+.form select {
+  width: 75%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+}
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  outline: none;
+  box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.1411764706);
+}
+.form textarea {
+  resize: none;
+  height: 10rem;
+}
+.form select > option {
+  padding: 0.25rem;
+}
+.form .form-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+.form #submit {
+  float: right;
+  border-radius: 0px 10px 0px 10px;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: fit-content;
 }
 
 .footer {

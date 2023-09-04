@@ -362,7 +362,13 @@ li {
     height: 23%;
     width: 100%;
   }
+  .header {
+    text-align: left;
+    align-items: flex-start;
+  }
   .header h1 {
+    display: flex;
+    flex-direction: column;
     font-size: 3rem;
   }
   .header h2 {

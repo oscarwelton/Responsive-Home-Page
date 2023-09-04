@@ -1,2 +1,193 @@
-@import "reset.css";
 @import "./media.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  width: 90vw;
+  margin: 0 auto;
+  scroll-snap-type: mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.navbar {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.navbar .navbar-logo {
+  display: flex;
+  align-items: center;
+}
+.navbar img {
+  height: 50px;
+  width: auto;
+  margin-right: 1rem;
+}
+.navbar a {
+  margin-left: 5rem;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  height: 85vh;
+  margin: 1rem 0;
+}
+.banner .image {
+  height: 100%;
+  width: 23%;
+  box-shadow: var(--shadow);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: height 0.5s ease-in-out;
+}
+.banner .one {
+  background-image: url(../images/one.jpg);
+}
+.banner .two {
+  background-image: url(../images/two.jpg);
+}
+.banner .three {
+  background-image: url(../images/three.jpg);
+}
+.banner .four {
+  background-image: url(../images/four.jpg);
+}
+
+.header {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.header h1 {
+  margin-bottom: 1rem;
+}
+
+.content {
+  max-width: 1000px;
+}
+.content .content-block {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+}
+.content .content-header {
+  font-weight: 700;
+}
+.content .content-text {
+  text-align: justify;
+  width: 70%;
+  line-height: 1.5;
+}
+.content .content-text p {
+  margin-bottom: 1rem;
+}
+
+.contact {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: sticky;
+  bottom: 1rem;
+  float: right;
+  background-color: white;
+  transition: background-color 0.5s ease;
+}
+.contact:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+:root {
+  --shadow: 8px 8px 7px #00000024;
+}

@@ -112,13 +112,17 @@ li {
   display: flex;
   align-items: center;
 }
+.navbar .navbar-links {
+  width: 50%;
+  text-align: right;
+}
 .navbar img {
   height: 50px;
   width: auto;
   margin-right: 1rem;
 }
 .navbar a {
-  margin-left: 5rem;
+  margin-left: 3rem;
 }
 
 .banner {
@@ -129,6 +133,7 @@ li {
 }
 .banner .image {
   height: 100%;
+  border-radius: 2px;
   width: 23%;
   box-shadow: var(--shadow);
   background-size: cover;
@@ -205,10 +210,10 @@ li {
 }
 .contact:hover {
   cursor: pointer;
-  background-color: red;
 }
 
 .contact-form {
+  display: none;
   background-image: url(../resources/svgs/contact.svg);
   background-color: rgba(165, 165, 165, 0.5);
   background-repeat: no-repeat;
@@ -230,8 +235,8 @@ li {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  max-width: 500px;
-  width: 100%;
+  max-width: 700px;
+  width: 80%;
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow);
@@ -239,10 +244,14 @@ li {
 .form input,
 .form textarea,
 .form select {
+  padding: 0 !important;
+  margin-left: 1rem;
   width: 75%;
   border: none;
   background-color: transparent;
   border-bottom: 1px solid black;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
 }
 .form input:focus,
 .form textarea:focus,
@@ -253,8 +262,27 @@ li {
   resize: none;
   height: 10rem;
 }
-.form select > option {
-  padding: 0.25rem;
+.form textarea::-webkit-scrollbar {
+  width: 2px;
+}
+.form textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.form textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0.5;
+}
+.form label {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  width: 25%;
+  margin: 1rem;
+}
+.form #area-label {
+  align-items: flex-start;
 }
 .form .form-row {
   display: flex;
@@ -265,9 +293,8 @@ li {
   float: right;
   border-radius: 0px 10px 0px 10px;
   padding: 0.5rem 1rem;
-  background-color: black;
+  background-color: white;
   border: 1px solid black;
-  color: white;
   font-size: 1.5rem;
   width: fit-content;
   transition: all 0.2s ease;
@@ -275,9 +302,13 @@ li {
 }
 .form .form-button:hover {
   cursor: pointer;
-  color: black;
-  background-color: white;
-  box-shadow: -4px -4px black;
+  box-shadow: 4px 4px black;
+}
+.form #close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
 }
 
 .footer {

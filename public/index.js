@@ -1,7 +1,17 @@
 window.addEventListener("load", () => {
-  console.log("window loaded");
-
   let contactOpen = false;
   const contact = document.querySelector(".contact");
+  const contactForm = document.querySelector(".contact-form");
 
+  contact.addEventListener("click", () => {
+    if (!contactOpen) {
+      contactForm.style.display = "none";
+      contact.innerHTML = "CONTACT";
+      contactOpen = true;
+    } else {
+      contactForm.style.display = "block";
+      contact.innerHTML = "SEND";
+      contactOpen = false;
+    }
+  });
 });

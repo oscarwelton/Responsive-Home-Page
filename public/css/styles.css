@@ -197,7 +197,6 @@ li {
 .contact {
   border: 1px solid black;
   z-index: 3;
-  border-radius: 50%;
   height: 100px;
   width: 100px;
   display: flex;
@@ -208,7 +207,7 @@ li {
   bottom: 1rem;
   right: 1rem;
   background-color: rgba(255, 255, 255, 0.5);
-  transition: background-color 0.5s ease;
+  transition: all 0.5s ease;
 }
 .contact:hover {
   cursor: pointer;
@@ -216,13 +215,9 @@ li {
   color: white;
 }
 
-.contact-form {
+.form-container {
   display: none;
-  background-image: url(../resources/svgs/contact.svg);
   background-color: rgba(255, 255, 255, 0.75);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   position: fixed;
   top: 0;
   height: 100vh;
@@ -236,13 +231,13 @@ li {
   position: absolute;
   top: 0;
   left: -6%;
-  background-color: rgb(217, 87, 87);
+  background-color: white;
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: var(--shadow);
+  box-shadow: var(--hard-shadow);
 }
 .form input,
 .form textarea,
@@ -292,7 +287,7 @@ li {
   margin-bottom: 2rem;
 }
 .form .form-button {
-  border-radius: 0px 10px 0px 10px;
+  border-radius: 2px;
   padding: 1rem 1.25rem;
   background-color: white;
   font-size: 1.5rem;
@@ -300,9 +295,12 @@ li {
   transition: all 0.2s ease;
   position: relative;
   border: none;
+  float: right;
 }
 .form .form-button:hover {
   cursor: pointer;
+  color: white;
+  background-color: black;
 }
 .form #close {
   position: absolute;
@@ -311,6 +309,22 @@ li {
   font-size: 1rem;
 }
 
+.slide {
+  animation: slide 0.5s ease-out forwards;
+}
+
+.hide {
+  animation: slide 0.5s ease-in reverse forwards;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
 .draw {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
@@ -392,4 +406,5 @@ li {
 }
 :root {
   --shadow: 8px 8px 7px #00000024;
+  --hard-shadow: 8px 8px 7px #000000;
 }

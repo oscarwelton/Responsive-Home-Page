@@ -1,16 +1,19 @@
 window.addEventListener("load", () => {
   let contactOpen = false;
   const contact = document.querySelector(".contact");
-  const contactForm = document.querySelector(".contact-form");
+  const form = document.querySelector(".form");
+  const contactForm = document.querySelector(".form-container");
 
   contact.addEventListener("click", () => {
     if (!contactOpen) {
       contactForm.style.display = "block";
-      contact.innerHTML = "SEND";
+      form.classList.add("slide");
+      contact.innerHTML = "CLOSE";
       contactOpen = true;
     } else {
       contactForm.style.display = "none";
-      contact.innerHTML = "CONTACT";
+      form.classList.add("hide");
+      contact.innerHTML = "LET'S <br> TALK";
       contactOpen = false;
     }
   });

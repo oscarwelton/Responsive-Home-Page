@@ -14,4 +14,5 @@ window.addEventListener("load", () => {
       contactOpen = false;
     }
   });
+
 });

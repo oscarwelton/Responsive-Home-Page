@@ -129,7 +129,6 @@ li {
   margin: 1rem 0;
 }
 .banner .image {
-  height: 100%;
   border-radius: 2px;
   width: 23%;
   box-shadow: var(--shadow);
@@ -208,11 +207,13 @@ li {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   transition: background-color 0.5s ease;
 }
 .contact:hover {
   cursor: pointer;
+  background-color: black;
+  color: white;
 }
 
 .contact-form {
@@ -223,25 +224,24 @@ li {
   background-size: cover;
   background-position: center;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
   height: 100vh;
-  width: 100vw;
+  width: 90%;
 }
 
 .form {
   padding: 2rem;
-  border-radius: 10px 10px 10px 10px;
+  box-sizing: border-box;
+  border-radius: 0px 10px 10px 0px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  max-width: 600px;
-  width: 80%;
+  top: 0;
+  left: -6%;
+  background-color: rgb(217, 87, 87);
+  width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   box-shadow: var(--shadow);
 }
 .form input,
@@ -253,7 +253,7 @@ li {
   border: none;
   background-color: transparent;
   border-bottom: 1px solid black;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: "Montserrat", sans-serif;
 }
 .form input:focus,
@@ -288,8 +288,8 @@ li {
 }
 .form .form-row {
   display: flex;
-  padding: 1rem;
   justify-content: space-between;
+  margin-bottom: 2rem;
 }
 .form .form-button {
   border-radius: 0px 10px 0px 10px;
@@ -353,7 +353,7 @@ li {
   .form .form-row {
     display: block;
   }
-  .form input {
+  .form input, .form textarea {
     margin-left: 0;
     width: 100%;
   }

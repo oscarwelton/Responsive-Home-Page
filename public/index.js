@@ -7,14 +7,16 @@ window.addEventListener("load", () => {
   contact.addEventListener("click", () => {
     if (!contactOpen) {
       contactForm.style.display = "block";
-      form.classList.add("slide");
+      form.classList.add("in");
+      form.classList.remove("out");
       contact.innerHTML = "CLOSE";
       contactOpen = true;
     } else {
-      contactForm.style.display = "none";
-      form.classList.add("hide");
+      form.classList.remove("in");
+      form.classList.add("out");
       contact.innerHTML = "LET'S <br> TALK";
       contactOpen = false;
+      // contactForm.style.display = "none";
     }
   });
 

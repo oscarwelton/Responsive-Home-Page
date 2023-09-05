@@ -195,7 +195,9 @@ li {
 }
 
 .contact {
-  border: 1px solid black;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  background-color: white;
   z-index: 3;
   height: 100px;
   width: 100px;
@@ -204,9 +206,8 @@ li {
   align-items: center;
   text-align: center;
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  bottom: 0;
+  right: 0;
   transition: all 0.5s ease;
 }
 .contact:hover {
@@ -217,11 +218,17 @@ li {
 
 .form-container {
   display: none;
-  background-color: rgba(255, 255, 255, 0.75);
   position: fixed;
+  z-index: 1;
   top: 0;
   height: 100vh;
   width: 90%;
+  transition: all 2s ease;
+}
+
+.form-title {
+  display: flex;
+  flex-direction: column;
 }
 
 .form {
@@ -229,10 +236,11 @@ li {
   box-sizing: border-box;
   border-radius: 0px 10px 10px 0px;
   position: absolute;
+  z-index: 3;
   top: 0;
   left: -6%;
   background-color: white;
-  width: 50%;
+  width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -309,12 +317,23 @@ li {
   font-size: 1rem;
 }
 
+.svg-background {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+.svg-background svg {
+  width: 100%;
+}
+
 .in {
-  animation: in 0.5s ease-out forwards;
+  animation: in 1s ease-out forwards;
 }
 
 .out {
-  animation: out 0.5s ease-in forwards;
+  animation: out 1s ease-in forwards;
 }
 
 @keyframes in {
@@ -334,14 +353,32 @@ li {
   }
 }
 .draw {
+  stroke: black;
+  stroke-width: 3px;
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
-  animation: draw 30s linear forwards;
+  animation: draw 2s ease-out forwards;
+}
+
+.undraw {
+  stroke: black;
+  stroke-width: 2px;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 0;
+  animation: undraw 1s ease-in forwards;
 }
 
 @keyframes draw {
   to {
     stroke-dashoffset: 0;
+  }
+}
+@keyframes undraw {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 2000;
   }
 }
 .footer {
@@ -368,14 +405,27 @@ li {
   margin: 1rem 1rem 0rem 1rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   .navbar .navbar-links {
     display: none;
+  }
+  .svg-background {
+    display: none;
+  }
+  .contact {
+    display: none;
+  }
+  .form {
+    width: 90%;
+  }
+  .form .form-title {
+    font-size: 3rem;
   }
   .form .form-row {
     display: block;
   }
-  .form input, .form textarea {
+  .form input,
+  .form textarea {
     margin-left: 0;
     width: 100%;
   }

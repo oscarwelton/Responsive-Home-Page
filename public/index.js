@@ -15,14 +15,28 @@ window.addEventListener("load", () => {
 
   let mobileMenuOpen = false;
 
+  function handleScroll() {
+    if (window.scrollY === 0) {
+      contactButton.disabled = true;
+      contactButton.classList.remove("fade-in");
+      contactButton.classList.add("fade-out");
+    } else {
+      contactButton.disabled = false;
+      contactButton.classList.add("fade-in");
+      contactButton.classList.remove("fade-out");
+    }
+  }
+  window.addEventListener("scroll", handleScroll);
 
   function openMenu() {
-    navbarLinks.style.display = "flex";
+    navbarLinks.classList.add("fade-in");
+    navbarLinks.classList.remove("fade-out");
     mobileMenuOpen = true;
   }
 
   function closeMenu() {
-    navbarLinks.style.display = "none";
+    navbarLinks.classList.remove("fade-in");
+    navbarLinks.classList.add("fade-out");
     mobileMenuOpen = false;
   }
 
@@ -33,7 +47,6 @@ window.addEventListener("load", () => {
       closeMenu();
     }
   });
-
 
   navLogo.addEventListener("click", () => {
     window.location.href = "/";

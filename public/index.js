@@ -6,6 +6,11 @@ window.addEventListener("load", () => {
   const closeButton = document.getElementById("close");
   const navContact = document.getElementById("nav-contact");
   const contactButton = document.querySelector(".contact-button");
+  const navLogo = document.querySelector(".navbar-logo");
+
+  navLogo.addEventListener("click", () => {
+    window.location.href = "/";
+  });
 
   function openForm() {
     if (window.innerWidth <= 650) {
@@ -56,12 +61,3 @@ window.addEventListener("load", () => {
     }
   });
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const button = document.querySelector(".contact-button");
-//   const targetPath = document.getElementById("target").getBoundingClientRect().width
-//   console.log(targetPath);
-
-//   button.style.height = targetPath + "px";
-//   button.style.width = targetPath + "px";
-// });

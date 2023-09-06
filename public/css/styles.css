@@ -20,13 +20,13 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
 body {
+  padding: 0rem 4rem;
   line-height: 1;
   scroll-snap-type: mandatory;
   scrollbar-width: none;
@@ -41,19 +41,8 @@ ol, ul {
   list-style: none;
 }
 
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+html {
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -97,7 +86,7 @@ li {
 }
 
 .navbar {
-  margin: 1rem 0;
+  margin: 1rem auto;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
@@ -107,6 +96,7 @@ li {
 .navbar .navbar-logo {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .navbar .navbar-links {
   text-align: right;
@@ -413,6 +403,9 @@ li {
 }
 
 @media only screen and (max-width: 650px) {
+  body {
+    padding: 0rem 1rem;
+  }
   .navbar .navbar-links {
     display: none;
   }

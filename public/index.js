@@ -8,6 +8,33 @@ window.addEventListener("load", () => {
   const contactButton = document.querySelector(".contact-button");
   const navLogo = document.querySelector(".navbar-logo");
 
+  const footerButton = document.getElementById("footer-contact");
+
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navbarLinks = document.querySelector(".navbar-links");
+
+  let mobileMenuOpen = false;
+
+
+  function openMenu() {
+    navbarLinks.style.display = "flex";
+    mobileMenuOpen = true;
+  }
+
+  function closeMenu() {
+    navbarLinks.style.display = "none";
+    mobileMenuOpen = false;
+  }
+
+  mobileMenu.addEventListener("click", () => {
+    if (!mobileMenuOpen) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  });
+
+
   navLogo.addEventListener("click", () => {
     window.location.href = "/";
   });
@@ -37,6 +64,14 @@ window.addEventListener("load", () => {
     }, 1500);
   }
 
+  footerButton.addEventListener("click", () => {
+    if (!contactOpen) {
+      openForm();
+    } else {
+      closeForm();
+    }
+  });
+
   contactButton.addEventListener("click", () => {
     if (!contactOpen) {
       openForm();
@@ -56,6 +91,7 @@ window.addEventListener("load", () => {
   navContact.addEventListener("click", () => {
     if (!contactOpen) {
       openForm();
+      closeMenu();
     } else {
       closeForm();
     }

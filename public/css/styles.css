@@ -92,11 +92,15 @@ li {
   padding: 0.5rem 0;
   align-items: center;
   border-bottom: 1px solid black;
+  position: relative;
 }
 .navbar .navbar-logo {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+.navbar #mobile-menu {
+  display: none;
 }
 .navbar .navbar-links {
   text-align: right;
@@ -407,9 +411,33 @@ li {
     padding: 0rem 1rem;
   }
   .navbar .navbar-links {
+    text-align: right;
+    position: absolute;
+    border-top: 1px solid black;
+    justify-content: space-around;
+    top: 100%;
     display: none;
+    flex-direction: column;
+    padding: 1rem;
+    right: 0;
+    height: 30vh;
+    width: 50vw;
+    background-color: white;
+    border-radius: 0px 0px 2px 2px;
   }
-  .svg-background, .contact-button {
+  .navbar .navbar-links a {
+    font-size: 2rem;
+    margin: 0;
+  }
+  .navbar #mobile-menu {
+    display: block;
+  }
+  .navbar #mobile-menu:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .svg-background,
+  .contact-button {
     display: none;
   }
   .form {
@@ -457,6 +485,12 @@ li {
   }
   .content .content-list {
     text-align: center;
+  }
+  .footer .links-container {
+    flex-direction: column;
+  }
+  .footer .footer-links {
+    margin: 1rem 0rem;
   }
 }
 :root {

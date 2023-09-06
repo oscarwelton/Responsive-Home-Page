@@ -28,8 +28,6 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
-  width: 90vw;
-  margin: 0 auto;
   scroll-snap-type: mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -194,36 +192,15 @@ li {
   z-index: -1;
 }
 
-.contact {
-  border-top: 2px solid black;
-  border-left: 2px solid black;
-  background-color: white;
-  z-index: 3;
-  height: 100px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  transition: all 0.5s ease;
-}
-.contact:hover {
-  cursor: pointer;
-  background-color: black;
-  color: white;
-}
-
 .form-container {
-  display: none;
   position: fixed;
   z-index: 1;
   top: 0;
   height: 100vh;
-  width: 90%;
-  transition: all 2s ease;
+  width: 100vw;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .form-title {
@@ -231,14 +208,30 @@ li {
   flex-direction: column;
 }
 
-.form {
-  padding: 2rem;
-  box-sizing: border-box;
-  border-radius: 0px 10px 10px 0px;
-  position: absolute;
+.contact-button {
+  position: fixed;
   z-index: 3;
-  top: 0;
-  left: -6%;
+  bottom: 0;
+  right: 0;
+  height: 120px;
+  width: 120px;
+  font-size: 2rem;
+  background-color: black;
+  border: 5px solid black;
+  box-shadow: -2px -2px 5px 0px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  color: white;
+  transition: all 0.2s ease;
+}
+.contact-button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+.form {
+  padding: 1rem;
+  box-sizing: border-box;
   background-color: white;
   width: 40%;
   height: 100%;
@@ -294,6 +287,10 @@ li {
   justify-content: space-between;
   margin-bottom: 2rem;
 }
+.form #close {
+  position: absolute;
+  right: 1rem;
+}
 .form .form-button {
   border-radius: 2px;
   padding: 1rem 1.25rem;
@@ -310,22 +307,19 @@ li {
   color: white;
   background-color: black;
 }
-.form #close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 1rem;
-}
 
 .svg-background {
-  position: fixed;
-  z-index: 1;
-  bottom: 0;
-  right: 0;
-  width: 100%;
+  height: 100%;
+  position: relative;
 }
 .svg-background svg {
-  width: 100%;
+  z-index: -1;
+  box-sizing: border-box;
+  position: absolute;
+  right: 100%;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .in {
@@ -336,6 +330,18 @@ li {
   animation: out 1s ease-in forwards;
 }
 
+.fade-out {
+  animation: fade-out 0.5s ease-in forwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 @keyframes in {
   from {
     transform: translateX(-100%);
@@ -349,21 +355,21 @@ li {
     transform: translateX(0%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-105%);
   }
 }
 .draw {
   stroke: black;
-  stroke-width: 3px;
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
+  stroke-width: 2px;
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
   animation: draw 2s ease-out forwards;
 }
 
 .undraw {
   stroke: black;
   stroke-width: 2px;
-  stroke-dasharray: 2000;
+  stroke-dasharray: 3500;
   stroke-dashoffset: 0;
   animation: undraw 1s ease-in forwards;
 }
@@ -378,7 +384,7 @@ li {
     stroke-dashoffset: 0;
   }
   to {
-    stroke-dashoffset: 2000;
+    stroke-dashoffset: 3500;
   }
 }
 .footer {
@@ -409,10 +415,7 @@ li {
   .navbar .navbar-links {
     display: none;
   }
-  .svg-background {
-    display: none;
-  }
-  .contact {
+  .svg-background, .contact-button {
     display: none;
   }
   .form {

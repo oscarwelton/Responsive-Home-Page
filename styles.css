@@ -86,7 +86,6 @@ li {
 }
 
 .navbar {
-  margin: 1rem auto;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
@@ -133,16 +132,16 @@ li {
   filter: invert(100%) brightness(120%) contrast(100%);
 }
 .banner .one {
-  background-image: url(../resources/images/one.jpg);
+  background-image: url(./resources/images/one.jpg);
 }
 .banner .two {
-  background-image: url(../resources/images/two.jpg);
+  background-image: url(./resources/images/two.jpg);
 }
 .banner .three {
-  background-image: url(../resources/images/three.jpg);
+  background-image: url(./resources/images/three.jpg);
 }
 .banner .four {
-  background-image: url(../resources/images/four.jpg);
+  background-image: url(./resources/images/four.jpg);
 }
 
 .header {
@@ -421,7 +420,15 @@ li {
 }
 .footer .footer-logo {
   margin: 1rem 5rem 1rem 0;
+  display: flex;
 }
+
+.footer .footer-logo img {
+  height: 50px;
+  width: auto;
+  margin-right: 1rem;
+}
+
 .footer .links-container {
   display: flex;
   justify-content: space-evenly;

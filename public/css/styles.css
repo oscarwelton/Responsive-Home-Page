@@ -424,7 +424,7 @@ li {
 }
 .footer .links-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 60%;
   flex-wrap: wrap;
 }
